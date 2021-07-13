@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;400&display=swap');
+
+:root {
+    --black: rgb(0, 0, 0);;
+    --white: rgb(255, 255, 255);
+    --gray: rgb(21, 24, 28);
+    --another-gray: rgb(47, 51, 54);
+    --blue: rgb(29, 161, 242);
+    --green: rgb(22, 190, 22);
+    --orange: rgb(255, 166, 0);
+    --red: rgb(224, 12, 12);
+    --placeholder-color: #bbb;
+    --box-shadow: 0 5px 10px rgba(154, 165, 211, 0.05), 0 15px 40px rgba(255, 250, 250, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.app-title {
+    color: var(--blue);
+    text-transform: capitalize;
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gray);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--another-gray);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.search-bar::placeholder {
+    color: var(--placeholder-color);
+}
+
+.search-bar:focus {
+    outline: none;
+    background-color: var(--black);
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-card {
+    width: 300px;
+    margin: 1rem;
+    background-color: var(--gray);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.movie-card .thumbnail {
+    width: 100%;
+}
+
+.movie-info {
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color: var(--another-gray);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green {
+    color: var(--green);
+}
+
+.movie-info span.orange {
+    color: var(--orange);
+}
+
+.movie-info span.red {
+    color: var(--red);
+}
+
+.movie-overview {
+    background-color: var(--gray);
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in;
+}
+
+.movie-card:hover .thumbnail{
+    opacity: 0.4;
+}
+
+.movie-card:hover .movie-overview {
+    transform: translateY(0);
+}
